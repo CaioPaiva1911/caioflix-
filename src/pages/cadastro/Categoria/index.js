@@ -31,7 +31,13 @@ function CadastroCategoria() {
   useEffect(() => {
     console.log('Amigo estou aqui');
     const url = 'http://localhost:8080/categorias';
-    fetch(url);
+    fetch(url)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        setCategorias([
+          ...resposta,
+        ]);
+      });
     // setTimeout(() => {
     //   setCategorias([
     //     ...categorias,
