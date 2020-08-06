@@ -31,8 +31,10 @@ function CadastroCategoria() {
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log('Amigo estou aqui');
-    const url = 'http://localhost:8080/categorias';
-    fetch(url)
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhoust:8080/categorias '
+      : 'http://caioflix.herokuapp.com/categorias';
+    fetch(URL)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
         setCategorias([
