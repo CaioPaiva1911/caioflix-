@@ -42,6 +42,7 @@ function CadastroVideo() {
           categoriaId: categoriaEscolhida.id,
         })
           .then(() => {
+            // eslint-disable-next-line no-console
             console.log('Cadastrou com sucesso!');
             history.push('/');
           });
